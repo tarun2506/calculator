@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/calc.css";
 
 function Calc() {
+  const [text, setText] = useState(0);
   return (
     <div id="calculator">
-      <div id="display"></div>
+      <div id="display">
+        <p>{text}</p>
+      </div>
       <div id="buttons">
         <button id="clear">AC</button>
         <button id="add" className="operator">
