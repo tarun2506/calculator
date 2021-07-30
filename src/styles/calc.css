@@ -1,0 +1,51 @@
+#calculator {
+  background-color: black;
+  height: 70%;
+  width: 22%;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: 1rem;
+}
+
+button {
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 500;
+  border: none;
+  color: white;
+  background-color: #111;
+  width: 25%;
+}
+
+#display {
+  width: 100%;
+  height: 30%;
+  color: white;
+}
+
+#buttons {
+  border-top: 0.5px solid grey;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 70%;
+}
+
+#clear {
+  width: 50%;
+  color: orange;
+}
+#decimal {
+  width: 25%;
+  font-weight: bolder;
+}
+
+#equals {
+  width: 50%;
+  background-color: orange;
+}
+
+.operator {
+  color: orange;
+}
