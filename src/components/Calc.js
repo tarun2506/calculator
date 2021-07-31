@@ -19,6 +19,13 @@ function Calc() {
     setClearInput(false);
     if (text.length <= 14) {
       setText((prev) => prev + e.target.innerText);
+      if (text.includes(".")) {
+        const btn = document.getElementById("decimal");
+        btn.disabled = true;
+      } else {
+        const btn = document.getElementById("decimal");
+        btn.disabled = false;
+      }
     } else {
       setError("Limit Reached 😭");
       setTimeout(() => {
