@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { evaluate } from "mathjs";
+import { evaluate, round } from "mathjs";
 import "../styles/calc.css";
 
 function Calc() {
@@ -17,7 +17,6 @@ function Calc() {
 
   const handleNumInput = (e) => {
     setClearInput(false);
-
     if (text.length <= 14) {
       setText((prev) => prev + e.target.innerText);
       if (text.includes(".")) {
@@ -28,7 +27,7 @@ function Calc() {
         btn.disabled = false;
       }
       if (output && e.target.classList.contains("operator")) {
-        setText(`${output} ${e.target.innerText}`);
+        setText(`${output}${e.target.innerText}`);
         setOutput("");
       }
     } else {
@@ -44,13 +43,15 @@ function Calc() {
   };
 
   const handleOutput = () => {
-    const output = evaluate(text);
-    if (output) {
-      setOutput(`${output}`);
+    let output = evaluate(text);
+    if (output || output.length >= 14) {
+      setOutput(`${round(output, 3)}`);
       const ele = document.getElementById("output");
       const ele2 = document.getElementById("input");
       ele.classList.add("output");
       ele2.classList.add("input");
+    } else {
+      setOutput("0");
     }
   };
 
