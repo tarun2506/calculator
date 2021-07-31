@@ -7,6 +7,7 @@ function Calc() {
   const [clearInput, setClearInput] = useState(false);
   const [error, setError] = useState("");
   const [output, setOutput] = useState("");
+  const [display, setDisplay] = useState(false);
 
   const handleClear = () => {
     setClearInput(true);
@@ -53,6 +54,10 @@ function Calc() {
     } else {
       setOutput("0");
     }
+  };
+
+  const handleDisplay = () => {
+    setDisplay(true);
   };
 
   return (

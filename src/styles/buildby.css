@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Style+Script&display=swap");
 
 #footer {
   font-family: "Lato", sans-serif;
@@ -15,4 +17,9 @@
 
 .heart {
   color: red;
+}
+
+#name {
+  font-family: "Style Script", cursive;
+  font-size: 2rem;
 }
