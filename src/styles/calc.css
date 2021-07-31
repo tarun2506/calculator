@@ -18,27 +18,35 @@ button {
   font-weight: 500;
   border: none;
   color: white;
-  background-color: #111;
+  background-color: black;
   width: 25%;
 }
 
 #display {
-  width: 100%;
-  height: 30%;
+  width: 95%;
+  height: 28%;
   color: white;
   font-family: "Roboto", sans-serif;
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   align-items: flex-end;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
+  margin: 0.2rem auto;
+}
+
+#display #input {
+  max-width: 100%;
 }
 
 #buttons {
   border-top: 0.5px solid grey;
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  height: 70%;
+  width: 95%;
+  height: 66%;
+  margin: 0rem auto;
+  margin-top: 1rem;
 }
 
 #clear {
@@ -60,8 +68,19 @@ button {
   color: orange;
 }
 
+#subtract {
+  font-weight: bolder;
+}
+
 @media (max-width: 500px) {
   #calculator {
     width: 80%;
   }
+  #display {
+    font-size: 2rem;
+  }
+}
+
+#error {
+  font-size: 2rem;
 }
