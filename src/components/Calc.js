@@ -21,6 +21,9 @@ function Calc() {
       setTimeout(() => {
         setError("");
       }, 1000);
+      setTimeout(() => {
+        setClearInput(true);
+      }, 1500);
     }
   };
 
