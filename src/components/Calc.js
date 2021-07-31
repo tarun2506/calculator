@@ -17,6 +17,7 @@ function Calc() {
 
   const handleNumInput = (e) => {
     setClearInput(false);
+
     if (text.length <= 14) {
       setText((prev) => prev + e.target.innerText);
       if (text.includes(".")) {
@@ -25,6 +26,10 @@ function Calc() {
       } else {
         const btn = document.getElementById("decimal");
         btn.disabled = false;
+      }
+      if (output && e.target.classList.contains("operator")) {
+        setText(`${output} ${e.target.innerText}`);
+        setOutput("");
       }
     } else {
       setError("Limit Reached 😭");
@@ -41,13 +46,12 @@ function Calc() {
   const handleOutput = () => {
     const output = evaluate(text);
     if (output) {
-      setOutput(`= ${output}`);
+      setOutput(`${output}`);
       const ele = document.getElementById("output");
       const ele2 = document.getElementById("input");
       ele.classList.add("output");
       ele2.classList.add("input");
     }
-    console.log(output);
   };
 
   return (
@@ -55,7 +59,7 @@ function Calc() {
       <div id="display">
         {error && <p id="error">{error}</p>}
         {clearInput ? <p id="input">0</p> : <p id="input">{text}</p>}
-        <p id="output">{output}</p>
+        <p id="output">{`${output}`}</p>
       </div>
       <div id="buttons">
         <button id="clear" onClick={handleClear}>
