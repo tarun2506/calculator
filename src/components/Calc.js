@@ -45,7 +45,7 @@ function Calc() {
   const handleOutput = () => {
     let output = evaluate(text);
     if (output || output.length >= 14) {
-      setOutput(`${round(output, 3)}`);
+      setOutput(`${round(output, 4)}`);
       const ele = document.getElementById("output");
       const ele2 = document.getElementById("input");
       ele.classList.add("output");
